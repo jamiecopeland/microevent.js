@@ -3,7 +3,7 @@ function Foo () {}
 MicroEvent.mixin(Foo)
 f = new Foo
 b = new Foo
-f.bind("blerg", function(val){ console.log("f got blerg", val) })
+f.on("blerg", function(val){ console.log("f got blerg", val) })
 
 console.log("You should see 'f got blerg yes' and nothing more:");
 console.log("")
@@ -13,5 +13,5 @@ b.trigger("blerg", "no")
 
 c = {}
 MicroEvent.mixin(c)
-c.bind('foo',function(bar){console.log(bar)})
+c.on('foo',function(bar){console.log(bar)})
 c.trigger('foo','bar')
